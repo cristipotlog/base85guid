@@ -13,8 +13,8 @@ BEGIN
 	DECLARE @output VARCHAR(20) = '';
 	DECLARE @value BIGINT = 0;
 	DECLARE @index INT = 0;
-	-- walk the bytes
-	WHILE( @index < LEN(@data) )
+	-- walk the bytes (len hardcoded to 16 : LEN(@data) returns 15 sometimes)
+	WHILE( @index < 16 )
 	BEGIN
 		-- build a 32-bit value from the bytes
 		SET @index = @index + 1;
